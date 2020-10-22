@@ -10,7 +10,7 @@
  ***************************/
 %{
 
-#include "../sql/Expr.h"
+#include "sql/Expr.h"
 #include "bison_parser.h"
 #include <stdio.h>
 #include <sstream>

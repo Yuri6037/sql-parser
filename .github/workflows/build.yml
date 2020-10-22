@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [ release ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    env:
+      INSTALL_DIR: ""
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - uses: Yuri6037/setup-cpp@master
+    - name: Build
+      run: |
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Release ..
+        cmake --build .
+    - name: Test
+      run: |
+        cd test
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build .
+        ./tests
+    - name: Pack
+      run: |
+        cp build/*sqlparser.* include
+    - uses: actions/upload-artifact@v2
+      name: Upload Build Snapshot
+      with:
+        name: ${{ matrix.os }}-x64
+        path: ./include

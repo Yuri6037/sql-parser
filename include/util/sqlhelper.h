@@ -1,7 +1,7 @@
 #ifndef SQLPARSER_SQLHELPER_H
 #define SQLPARSER_SQLHELPER_H
 
-#include "../sql/statements.h"
+#include "sql/statements.h"
 
 namespace hsql {
 

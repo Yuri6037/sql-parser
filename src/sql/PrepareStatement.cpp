@@ -1,5 +1,5 @@
 
-#include "PrepareStatement.h"
+#include "sql/PrepareStatement.h"
 
 namespace hsql {
   // PrepareStatement

@@ -12,6 +12,8 @@
 #ifndef __MICROTEST_H__
 #define __MICROTEST_H__
 
+#include "../../../src/msvc_hack.h"
+
 #include <vector>
 #include <string>
 #include <iostream>

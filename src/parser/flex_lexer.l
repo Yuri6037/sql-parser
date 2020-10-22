@@ -10,19 +10,11 @@
  ***************************/
 %{
 
+#include "../msvc_hack.h"
 #include "sql/Expr.h"
 #include "bison_parser.h"
 #include <stdio.h>
 #include <sstream>
-
-// The greatest evil MSVC hack!
-#ifdef _MSC_VER
-	#pragma warning (disable : 4005)
-	#define _CRT_SECURE_NO_WARNINGS
-	#define strdup _strdup
-	#define strncasecmp _strnicmp
-	#define strcasecmp _stricmp
-#endif
 
 #define TOKEN(name) { return SQL_##name; }
 

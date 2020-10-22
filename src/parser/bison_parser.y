@@ -11,20 +11,12 @@
  ** Section 1: C Declarations
  *********************************/
 
+#include "../msvc_hack.h"
 #include "bison_parser.h"
 #include "flex_lexer.h"
 
 #include <stdio.h>
 #include <string.h>
-
-// The greatest evil MSVC hack!
-#ifdef _MSC_VER
-	#pragma warning (disable : 4005)
-	#define _CRT_SECURE_NO_WARNINGS
-	#define strdup _strdup
-	#define strncasecmp _strnicmp
-	#define strcasecmp _stricmp
-#endif
 
 using namespace hsql;
 

@@ -1,3 +1,4 @@
+#include "../msvc_hack.h"
 #include "sql/Expr.h"
 #include <stdio.h>
 #include <string.h>

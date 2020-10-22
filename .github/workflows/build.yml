@@ -30,7 +30,9 @@ jobs:
         cd build
         cmake ..
         cmake --build .
-        ./tests
+        cd ..
+        cd ..
+        ./test/bin/tests
     - name: Pack
       run: |
         cp build/*sqlparser.* include

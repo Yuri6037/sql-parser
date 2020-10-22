@@ -35,7 +35,7 @@ jobs:
         ./test/bin/tests
     - name: Pack
       run: |
-        cp build/*sqlparser.* include
+        cp libsqlparser.* include
     - uses: actions/upload-artifact@v2
       name: Upload Build Snapshot
       with:

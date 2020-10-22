@@ -17,6 +17,15 @@
 #include <stdio.h>
 #include <string.h>
 
+// The greatest evil MSVC hack!
+#ifdef _MSC_VER
+	#pragma warning (disable : 4005)
+	#define _CRT_SECURE_NO_WARNINGS
+	#define strdup _strdup
+	#define strncasecmp _strnicmp
+	#define strcasecmp _stricmp
+#endif
+
 using namespace hsql;
 
 int yyerror(YYLTYPE* llocp, SQLParserResult* result, yyscan_t scanner, const char *msg) {

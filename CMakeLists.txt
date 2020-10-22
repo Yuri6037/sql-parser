@@ -1,6 +1,8 @@
 project(sqlparser)
 cmake_minimum_required(VERSION 3.10)
 
+set(CMAKE_CXX_STANDARD 11)
+
 set(SOURCES
     include/SQLParser.h
     include/SQLParserResult.h
